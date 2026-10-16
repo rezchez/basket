@@ -1,0 +1,8 @@
+{
+  "name": "basketball-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "bun run.ts",
+    "start": "bun run.ts"
+  }
+}

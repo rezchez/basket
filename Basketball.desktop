@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Basketball App
+Comment=Start Basketball Frontend and Backend
+Exec=/home/reza/Desktop/basketball/run.sh
+Icon=applications-games
+Path=/home/reza/Desktop/basketball
+Terminal=true
+Categories=Development;
