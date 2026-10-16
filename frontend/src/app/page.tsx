@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { pb } from '@/lib/pocketbase';
+import LogoutButton from '@/app/components/LogoutButton';
 import { TEHRAN_COUNTIES_FA, TEHRAN_COUNTIES } from '@/lib/validations/auth';
 
 export default function HomePage() {
@@ -69,12 +70,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <button
-                onClick={handleLogout}
-                className="px-6 py-3 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold rounded-2xl shadow-md shadow-red-200 transition duration-150 cursor-pointer self-start md:self-auto"
-              >
-                خروج از حساب
-              </button>
+              <LogoutButton />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
