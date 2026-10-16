@@ -1,0 +1,82 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 578ms
+✓ Running next.config.ts took 47ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+○ Compiling / ...
+ GET / 200 in 709ms (next.js: 291ms, application-code: 418ms)
+ GET /register 200 in 288ms (next.js: 26ms, application-code: 262ms)
+ GET / 200 in 59ms (next.js: 11ms, application-code: 48ms)
+ GET / 200 in 36ms (next.js: 2ms, application-code: 34ms)
+ GET /login 200 in 52ms (next.js: 11ms, application-code: 41ms)
+ GET /login 200 in 74ms (next.js: 8ms, application-code: 66ms)
+ GET /register 200 in 71ms (next.js: 1.8ms, application-code: 69ms)
+[browser] Registration error: ClientResponseError 400: Failed to create record.
+    at async onSubmit (src/app/register/page.tsx:48:7)
+  46 |     try {
+  47 |       // 1. Create user in PocketBase
+> 48 |       await pb.collection('users').create({
+     |       ^
+  49 |         email: data.email,
+  50 |         password: data.password,
+  51 |         passwordConfirm: data.passwordConfirm, (src/app/register/page.tsx:69:15)
+ GET /register 200 in 169ms (next.js: 6ms, application-code: 163ms)
+[browser] Registration error: ClientResponseError 400: Failed to create record.
+    at async onSubmit (src/app/register/page.tsx:48:7)
+  46 |     try {
+  47 |       // 1. Create user in PocketBase
+> 48 |       await pb.collection('users').create({
+     |       ^
+  49 |         email: data.email,
+  50 |         password: data.password,
+  51 |         passwordConfirm: data.passwordConfirm, (src/app/register/page.tsx:69:15)
+ GET /register 200 in 72ms (next.js: 3ms, application-code: 69ms)
+[browser] Registration error: ClientResponseError 400: Failed to create record.
+    at async onSubmit (src/app/register/page.tsx:48:7)
+  46 |     try {
+  47 |       // 1. Create user in PocketBase
+> 48 |       await pb.collection('users').create({
+     |       ^
+  49 |         email: data.email,
+  50 |         password: data.password,
+  51 |         passwordConfirm: data.passwordConfirm, (src/app/register/page.tsx:69:15)
+ GET /register 200 in 64ms (next.js: 2ms, application-code: 62ms)
+ GET /register 200 in 67ms (next.js: 1.7ms, application-code: 65ms)
+ GET / 200 in 38ms (next.js: 2ms, application-code: 36ms)
+ GET / 200 in 35ms (next.js: 4ms, application-code: 32ms)
+ GET /register 200 in 64ms (next.js: 1.5ms, application-code: 63ms)
+ GET /register 200 in 70ms (next.js: 1.6ms, application-code: 68ms)
+[browser] Registration error: ClientResponseError 400: Failed to create record.
+    at async onSubmit (src/app/register/page.tsx:48:7)
+  46 |     try {
+  47 |       // 1. Create user in PocketBase
+> 48 |       await pb.collection('users').create({
+     |       ^
+  49 |         email: data.email,
+  50 |         password: data.password,
+  51 |         passwordConfirm: data.passwordConfirm, (src/app/register/page.tsx:69:15)
+ GET /register 200 in 58ms (next.js: 1.3ms, application-code: 57ms)
+[browser] Registration error: ClientResponseError 400: Failed to create record.
+    at async onSubmit (src/app/register/page.tsx:48:7)
+  46 |     try {
+  47 |       // 1. Create user in PocketBase
+> 48 |       await pb.collection('users').create({
+     |       ^
+  49 |         email: data.email,
+  50 |         password: data.password,
+  51 |         passwordConfirm: data.passwordConfirm, (src/app/register/page.tsx:69:15)
+ GET /register 200 in 62ms (next.js: 2ms, application-code: 60ms)
+ GET / 200 in 44ms (next.js: 1.9ms, application-code: 42ms)
+ GET / 200 in 35ms (next.js: 4ms, application-code: 31ms)
+ GET /login 200 in 54ms (next.js: 2ms, application-code: 52ms)
+ GET /login 200 in 36ms (next.js: 1.8ms, application-code: 35ms)
+ GET /login 200 in 56ms (next.js: 1.3ms, application-code: 55ms)
+ GET / 200 in 33ms (next.js: 2ms, application-code: 31ms)
+ GET / 200 in 43ms (next.js: 1.8ms, application-code: 41ms)
