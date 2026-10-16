@@ -20,7 +20,7 @@ export default function LoginPage() {
   } = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: '',
+      identity: '',
       password: '',
     },
   });
@@ -30,13 +30,13 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      await pb.collection('users').authWithPassword(data.email, data.password);
+      await pb.collection('users').authWithPassword(data.identity.trim(), data.password);
       router.push('/');
       router.refresh();
     } catch (err: any) {
       console.error('Login error:', err);
       if (err?.response?.message || err?.message) {
-        setServerError('ایمیل یا رمز عبور وارد شده اشتباه است.');
+        setServerError('ایمیل، کد ملی یا رمز عبور وارد شده اشتباه است.');
       } else {
         setServerError('خطایی در برقراری ارتباط با سرور رخ داده است.');
       }
@@ -50,10 +50,10 @@ export default function LoginPage() {
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-slate-800 mb-2">
-            ورود به سامانه ورزشکاران
+            ورود به سامانه بسکتبال
           </h1>
           <p className="text-sm text-slate-500">
-            برای دسترسی به حساب کاربری خود، اطلاعات ورود را وارد کنید.
+            برای ورود، آدرس ایمیل یا کد ملی خود را به همراه رمز عبور وارد نمایید.
           </p>
         </div>
 
@@ -66,22 +66,22 @@ export default function LoginPage() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1.5">
-              آدرس ایمیل <span className="text-red-500">*</span>
+              ایمیل یا کد ملی (۱۰ رقم) <span className="text-red-500">*</span>
             </label>
             <input
-              type="email"
+              type="text"
               dir="ltr"
-              {...register('email')}
-              placeholder="example@domain.com"
+              {...register('identity')}
+              placeholder="example@domain.com یا 0012345678"
               className={`w-full px-4 py-2.5 rounded-xl border text-left text-slate-800 transition focus:outline-none focus:ring-2 ${
-                errors.email
+                errors.identity
                   ? 'border-red-400 focus:ring-red-200 bg-red-50/20'
                   : 'border-slate-300 focus:border-indigo-500 focus:ring-indigo-100'
               }`}
             />
-            {errors.email && (
+            {errors.identity && (
               <p className="mt-1.5 text-xs text-red-600 font-medium">
-                {errors.email.message}
+                {errors.identity.message}
               </p>
             )}
           </div>

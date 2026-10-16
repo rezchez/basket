@@ -128,10 +128,20 @@ export const registerSchema = z
 export type RegisterInput = z.infer<typeof registerSchema>;
 
 export const loginSchema = z.object({
-  email: z
+  identity: z
     .string()
-    .min(1, { message: 'لطفاً ایمیل خود را وارد کنید.' })
-    .email({ message: 'فرمت ایمیل نامعتبر است.' }),
+    .min(1, { message: 'لطفاً ایمیل یا کد ملی خود را وارد کنید.' })
+    .refine(
+      (val) => {
+        const trimmed = val.trim();
+        const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed);
+        const isNationalId = /^\d{10}$/.test(trimmed);
+        return isEmail || isNationalId;
+      },
+      {
+        message: 'لطفاً یک آدرس ایمیل معتبر یا کد ملی ۱۰ رقمی وارد کنید.',
+      }
+    ),
 
   password: z
     .string()

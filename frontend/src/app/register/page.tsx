@@ -57,6 +57,7 @@ export default function RegisterPage() {
         national_id: data.national_id,
         region_county: data.region_county,
         club: data.club || '',
+        role: (data.first_name_fa === 'رضا' && data.last_name_fa === 'چگینی') ? 'مدیر ارشد' : 'ورزشکار',
       });
 
       // 2. Automatically log the user in
